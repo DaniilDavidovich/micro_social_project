@@ -1,11 +1,25 @@
 <footer class="footer-card">
-
     <div class="footer-content">
-        <span>Контакты</span>
-        <span>О проекте</span>
-        <span>Правила</span>
-        <span>Поддержка</span>
-        <span>Конфиденциальность</span>
-    </div>
 
+        <a href="{% url 'core:about' %}"
+           class="footer-link {% if url == 'about' %}active{% endif %}">
+            About
+        </a>
+
+        <a href="{% url 'core:terms' %}"
+           class="footer-link {% if url == 'terms' %}active{% endif %}">
+            Terms
+        </a>
+
+        <a href="{% url 'core:privacy' %}"
+           class="footer-link {% if url == 'privacy' %}active{% endif %}">
+            Privacy
+        </a>
+
+        <a href="{% url 'core:support' %}"
+           class="footer-link {% if url == 'support' %}active{% endif %}">
+            Support
+        </a>
+
+    </div>
 </footer>

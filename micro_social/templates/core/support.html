@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Support{% endblock %}
+
+{% block content %}
+<div class="post-detail-layout">
+
+    <article class="post-detail-card">
+
+        <div class="hero-badge">Support</div>
+
+        <h1 class="post-title">
+            How can we help?
+        </h1>
+
+        <p class="hero-description">
+            Questions, feedback, or technical issues — we're here for you.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="news-card info-card">
+                <div class="info-number">⚡</div>
+                <h3 class="info-title">Technical issues</h3>
+                <p class="info-text">
+                    Report bugs or unexpected behavior.
+                </p>
+            </div>
+
+            <div class="news-card info-card">
+                <div class="info-number">✉</div>
+                <h3 class="info-title">Contact us</h3>
+                <p class="info-text">
+                    Reach out with questions or suggestions.
+                </p>
+            </div>
+
+            <div class="news-card info-card">
+                <div class="info-number">48h</div>
+                <h3 class="info-title">Response time</h3>
+                <p class="info-text">
+                    Most requests receive a reply within two business days.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="action-block">
+
+            <a href="mailto:support@example.com"
+               class="primary-button hero-button">
+                Contact support
+            </a>
+
+            <a href="{% url 'core:terms' %}"
+               class="secondary-button hero-button">
+                View terms
+            </a>
+
+        </div>
+
+    </article>
+
+</div>
+{% endblock %}

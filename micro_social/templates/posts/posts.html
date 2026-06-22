@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Micro Social
+{% endblock %}
+
+{% block content %}
+
+<div class="content-layout">
+
+    <section class="news-column">
+
+        {% for post in posts %}
+
+        <article class="news-card">
+
+            <div class="news-content">
+
+                <div class="news-meta">
+
+                    <span class="news-author">
+                        {{ post.author.username }}
+                    </span>
+
+                    <span class="news-separator">•</span>
+
+                    <time class="news-date">
+                        {{ post.pub_date|date:"d E Y" }}
+                    </time>
+
+                </div>
+
+                <h2 class="news-title">
+                    {{ post.title }}
+                </h2>
+
+                <p class="news-excerpt">
+                    {{ post.text|truncatechars:220 }}
+                </p>
+
+                <a href="{% url 'post_detail' post.pk %}" class="read-more">
+                    Читать полностью
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <article class="news-card">
+
+            <div class="news-content">
+
+                <h2 class="news-title">
+                    Пока нет новостей
+                </h2>
+
+                <p class="news-excerpt">
+                    Разработчики ещё не опубликовали ни одной записи.
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+</div>
+
+{% endblock %}

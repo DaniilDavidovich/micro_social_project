@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }} — Micro Social
+{% endblock %}
+
+{% block content %}
+
+<div class="post-detail-layout">
+
+    <article class="post-detail-card">
+
+        <a href="{% url 'posts_list' %}" class="back-link">
+            ← Назад к новостям
+        </a>
+
+        <div class="post-meta">
+
+            <span class="post-author">
+                {{ post.author.username }}
+            </span>
+
+            <span class="post-separator">
+                •
+            </span>
+
+            <time class="post-date">
+                {{ post.pub_date|date:"d E Y, H:i" }}
+            </time>
+
+        </div>
+
+        <h1 class="post-title">
+            {{ post.title }}
+        </h1>
+
+        <div class="post-text">
+            {{ post.text|linebreaks }}
+        </div>
+
+    </article>
+
+</div>
+
+{% endblock %}

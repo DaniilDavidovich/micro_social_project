@@ -1,11 +1,11 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+
 from .models import Post
 
 
-def index(request):
-   template = 'posts/index.html'
+def posts_list(request):
+   template = 'posts/posts.html'
    posts = Post.objects.order_by('-pub_date')[:10]
 
    # Post.objects.all() 
@@ -21,12 +21,12 @@ def index(request):
    return render(request, template, context=context) 
 
 
-def posts_list(request):
-   return HttpResponse('Posts list')
-
-
 def post_detail(request, pk):
-   return HttpResponse(f'Posts number {pk}') 
+   template = 'posts/post_detail.html'
+   post = get_object_or_404(Post, pk=pk)
+   context = { 'post': post }
+   return render(request, template, context) 
+
 
 def slug(request, slug):
     return HttpResponse(f'Hello {slug}')
