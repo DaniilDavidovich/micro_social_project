@@ -1,0 +1,80 @@
+/* =========================
+   HERO
+========================= */
+
+.hero-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+}
+
+.hero-card {
+    max-width: 980px;
+    width: 100%;
+
+    padding: 72px;
+
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+
+    margin-bottom: 24px;
+    padding: 8px 14px;
+
+    background: rgba(255, 149, 0, 0.12);
+    color: var(--accent);
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-title {
+    margin-bottom: 24px;
+
+    font-size: 72px;
+    font-weight: 700;
+
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+}
+
+.hero-description {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 48px;
+
+    flex-wrap: wrap;
+}
+
+.hero-button {
+    min-width: 220px;
+    height: 56px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 32px;
+
+    text-decoration: none;
+}

@@ -1,0 +1,39 @@
+/* =========================
+   LIGHT THEME
+========================= */
+
+:root {
+    color-scheme: light dark;
+
+    --bg: #FFFFFF;
+    --surface: #F2F2F7;
+    --text: #000000;
+    --text-secondary: rgba(60, 60, 67, 0.6);
+    --border: #C6C6C8;
+    --accent: #FF9500;
+
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+
+    --header-height: 76px;
+    --footer-height: 76px;
+}
+
+/* =========================
+   DARK THEME (macOS)
+========================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #000000;
+        --surface: #1C1C1E;
+        --text: #FFFFFF;
+        --text-secondary: rgba(235, 235, 245, 0.6);
+        --border: #38383A;
+
+        --shadow: none;
+    }
+}

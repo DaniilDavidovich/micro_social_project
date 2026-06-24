@@ -8,57 +8,47 @@ Micro Social
 
 <div class="content-layout">
 
-    <section class="news-column">
+    <section class="posts-column">
 
         {% for post in posts %}
 
-        <article class="news-card">
+        <article class="posts-card">
 
-            <div class="news-content">
+            <div class="posts-content">
 
-                <div class="news-meta">
+                <div class="posts-meta">
 
-                    <span class="news-author">
+                    <span class="posts-author">
                         {{ post.author.username }}
                     </span>
 
-                    <span class="news-separator">•</span>
+                    <span class="posts-separator">•</span>
 
-                    <time class="news-date">
+                    <time class="posts-date">
                         {{ post.pub_date|date:"d E Y" }}
                     </time>
 
+                    {% if post.group %}
+                    <span class="post-separator">•</span>
+
+                    <a href="{% url 'posts:group_posts' post.group.slug %}" class="post-group">
+                        {{ post.group.title }}
+                    </a>
+                    {% endif %}
+
                 </div>
 
-                <h2 class="news-title">
+                <h2 class="posts-title">
                     {{ post.title }}
                 </h2>
 
-                <p class="news-excerpt">
+                <p class="posts-excerpt">
                     {{ post.text|truncatechars:220 }}
                 </p>
 
-                <a href="{% url 'post_detail' post.pk %}" class="read-more">
-                    Читать полностью
+                <a href="{% url 'posts:post_detail' post.pk %}" class="read-more">
+                    Read more →
                 </a>
-
-            </div>
-
-        </article>
-
-        {% empty %}
-
-        <article class="news-card">
-
-            <div class="news-content">
-
-                <h2 class="news-title">
-                    Пока нет новостей
-                </h2>
-
-                <p class="news-excerpt">
-                    Разработчики ещё не опубликовали ни одной записи.
-                </p>
 
             </div>
 

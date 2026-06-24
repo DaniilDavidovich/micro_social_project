@@ -1,0 +1,103 @@
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .app-container {
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .posts-card,
+    .post-detail-card,
+    .hero-card {
+        padding: 28px;
+    }
+
+    .posts-title {
+        font-size: 28px;
+    }
+
+    .post-title {
+        font-size: 38px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-description,
+    .posts-excerpt,
+    .post-text {
+        font-size: 18px;
+    }
+
+    .posts-meta,
+    .post-meta,
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-content {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+
+    margin: 48px 0;
+}
+
+.info-card {
+    padding: 32px;
+}
+
+.info-number {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-size: 32px;
+    font-weight: 700;
+
+    letter-spacing: -0.05em;
+}
+
+.info-title {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: -0.03em;
+}
+
+.info-text {
+    color: var(--text-secondary);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.action-block {
+    display: flex;
+    gap: 16px;
+
+    margin-top: 48px;
+
+    flex-wrap: wrap;
+}

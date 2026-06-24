@@ -24,11 +24,12 @@ def posts_list(request):
 def post_detail(request, pk):
    template = 'posts/post_detail.html'
    post = get_object_or_404(Post, pk=pk)
+   print(post.group)
    context = { 'post': post }
    return render(request, template, context) 
 
 
-def slug(request, slug):
+def group_posts(request, slug):
     return HttpResponse(f'Hello {slug}')
 
 

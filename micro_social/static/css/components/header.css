@@ -1,0 +1,76 @@
+/* =========================
+   HEADER
+========================= */
+
+.header-card {
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 24px;
+}
+
+.header-content {
+    display: flex;
+    gap: 32px;
+
+    color: var(--text-secondary);
+}
+
+.header-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.header-link:hover {
+    color: var(--accent);
+}
+
+.header-link.active {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--text);
+    text-decoration: none;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    background: var(--accent);
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+}
+
+.brand-logo {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
+}

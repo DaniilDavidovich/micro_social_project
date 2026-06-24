@@ -1,0 +1,27 @@
+.post-group {
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(255,149,0,.12);
+
+    color: var(--accent);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.post-group:hover {
+
+    background: rgba(255,149,0,.18);
+
+    color: var(--accent);
+}

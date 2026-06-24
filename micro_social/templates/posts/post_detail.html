@@ -10,8 +10,8 @@
 
     <article class="post-detail-card">
 
-        <a href="{% url 'posts_list' %}" class="back-link">
-            ← Назад к новостям
+        <a href="{% url 'posts:posts_list' %}" class="back-link">
+            ← Back to posts
         </a>
 
         <div class="post-meta">
@@ -27,6 +27,14 @@
             <time class="post-date">
                 {{ post.pub_date|date:"d E Y, H:i" }}
             </time>
+
+            {% if post.group %}
+            <span class="post-separator">•</span>
+
+            <a href="{% url 'posts:group_posts' post.group.slug %}" class="post-group">
+                {{ post.group.title }}
+            </a>
+            {% endif %}
 
         </div>
 
