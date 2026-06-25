@@ -5,7 +5,7 @@
     <a href="/" class="brand">
 
         <div class="brand-icon">
-            <img src="{% static 'image/logo.svg' %}" alt="Micro Social" class="brand-logo">
+            <img src="{% static 'images/logo.svg' %}" alt="Micro Social" class="brand-logo">
         </div>
 
         <span class="brand-title">
@@ -15,8 +15,13 @@
         <div class="header-content">
 
             <a href="{% url 'posts:posts_list' %}"
-                class="header-link {% if request.resolver_match.namespace == 'posts' %}active{% endif %}">
+                class="header-link {% if request.resolver_match.url_name == 'posts_list' or request.resolver_match.url_name == 'post_detail' %}active{% endif %}">
                 Posts
+            </a>
+
+            <a href="{% url 'posts:groups_list' %}"
+                class="header-link {% if request.resolver_match.url_name == 'groups_list' or request.resolver_match.url_name == 'group_detail' %}active{% endif %}">
+                Groups
             </a>
 
         </div>

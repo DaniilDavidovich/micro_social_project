@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ group.title }} — Micro Social
+{% endblock %}
+
+{% block content %}
+
+<div class="group-page">
+
+    <a href="#" onclick="history.back(); return false;" class="back-link">
+        ← Back
+    </a>
+
+    <section class="group-header">
+
+        <div class="group-header__top">
+
+            <div>
+
+                <span class="group-badge">
+                    Community
+                </span>
+
+                <h1 class="group-title">
+                    {{ group.title }}
+                </h1>
+
+                <p class="group-description">
+                    {{ group.description }}
+                </p>
+
+            </div>
+
+            <div class="group-stats">
+
+                <div class="group-stat">
+
+                    <span class="group-stat__number">
+                        {{ page_obj.paginator.count }}
+                    </span>
+
+                    <span class="group-stat__label">
+                        Posts
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="group-posts">
+
+        <h2 class="group-post-card__title">
+            Latest Posts
+        </h2>
+
+        {% for post in page_obj %}
+
+        <article class="post-card">
+
+            <div class="post-card__content">
+
+                <div class="post-card__meta">
+
+                    <span class="post-author">
+                        {{ post.author.username }}
+                    </span>
+
+                    <span class="post-separator">
+                        •
+                    </span>
+
+                    <time class="post-date">
+                        {{ post.pub_date|date:"d E Y" }}
+                    </time>
+
+                </div>
+
+                <h2 class="post-card__title">
+                    {{ post.title }}
+                </h2>
+
+                <p class="post-card__excerpt">
+                    {{ post.text|truncatechars:220 }}
+                </p>
+
+                <a href="{% url 'posts:post_detail' post.pk %}" class="read-more">
+                    Read more →
+                </a>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <article class="post-card">
+
+            <div class="post-card__content">
+
+                <h2 class="post-card__title">
+                    No posts yet
+                </h2>
+
+                <p class="post-card__excerpt">
+                    This community does not contain any posts.
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+    {% if page_obj.has_other_pages %}
+
+    <div class="pagination">
+
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">
+            ← Previous
+        </a>
+        {% endif %}
+
+        <span class="pagination-current">
+            Page {{ page_obj.number }}
+            of
+            {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">
+            Next →
+        </a>
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

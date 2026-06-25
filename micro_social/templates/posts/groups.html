@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Groups — Micro Social
+{% endblock %}
+
+{% block content %}
+
+<div class="groups-layout">
+
+    <section class="groups-hero">
+        <span class="groups-badge">Communities</span>
+        <h1 class="groups-title">Discover Groups</h1>
+        <p class="groups-description">
+            Join communities, follow topics and explore discussions
+            created by the Micro Social community.
+        </p>
+    </section>
+
+    <div class="groups-search-wrapper">
+        <img src="{% static 'images/search-icon.svg' %}" alt="Search" class="groups-search-icon">
+        <input
+            type="text"
+            placeholder="Search groups..."
+            class="groups-search-input"
+            id="groupsSearch"
+        >
+    </div>
+
+    <div class="groups-grid" id="groupsGrid">
+        {% include 'posts/_group_cards.html' %}
+    </div>
+
+    <div class="groups-no-results" id="noResults" style="display: none;">
+        No groups found matching your search.
+    </div>
+
+</div>
+
+<script src="{% static 'js/groups.js' %}"></script>
+
+{% endblock %}

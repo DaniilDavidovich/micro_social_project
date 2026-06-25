@@ -1,0 +1,7 @@
+{% for group in groups %}
+    <a href="{% url 'posts:group_detail' group.slug %}" class="group-card">
+        <h3 class="group-card__title">{{ group.title }}</h3>
+        <p class="group-card__description">{{ group.description|truncatewords:20 }}</p>
+        <span class="group-card__meta">{{ group.posts.count }} posts</span>
+    </a>
+{% endfor %}

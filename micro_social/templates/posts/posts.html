@@ -8,41 +8,41 @@ Micro Social
 
 <div class="content-layout">
 
-    <section class="posts-column">
+    <section class="post-list">
 
         {% for post in posts %}
 
-        <article class="posts-card">
+        <article class="post-card">
 
-            <div class="posts-content">
+            <div class="post-card__content">
 
-                <div class="posts-meta">
+                <div class="post-card__meta">
 
-                    <span class="posts-author">
+                    <span class="post-author">
                         {{ post.author.username }}
                     </span>
 
-                    <span class="posts-separator">•</span>
+                    <span class="post-separator">•</span>
 
-                    <time class="posts-date">
+                    <time class="post-date">
                         {{ post.pub_date|date:"d E Y" }}
                     </time>
 
                     {% if post.group %}
                     <span class="post-separator">•</span>
 
-                    <a href="{% url 'posts:group_posts' post.group.slug %}" class="post-group">
+                    <a href="{% url 'posts:group_detail' post.group.slug %}" class="post-group">
                         {{ post.group.title }}
                     </a>
                     {% endif %}
 
                 </div>
 
-                <h2 class="posts-title">
+                <h2 class="post-card__title">
                     {{ post.title }}
                 </h2>
 
-                <p class="posts-excerpt">
+                <p class="post-card__excerpt">
                     {{ post.text|truncatechars:220 }}
                 </p>
 

@@ -4,7 +4,7 @@
 
 .header-card,
 .footer-card,
-.posts-card,
+.post-card,
 .post-detail-card {
     background: var(--surface);
     border: 1px solid var(--border);

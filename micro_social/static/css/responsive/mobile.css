@@ -9,13 +9,13 @@
         padding: 16px;
     }
 
-    .posts-card,
+    .post-card,
     .post-detail-card,
     .hero-card {
         padding: 28px;
     }
 
-    .posts-title {
+    .post-card__title {
         font-size: 28px;
     }
 
@@ -28,12 +28,12 @@
     }
 
     .hero-description,
-    .posts-excerpt,
+    .post-card__excerpt,
     .post-text {
         font-size: 18px;
     }
 
-    .posts-meta,
+    .post-card__meta,
     .post-meta,
     .footer-content {
         flex-wrap: wrap;

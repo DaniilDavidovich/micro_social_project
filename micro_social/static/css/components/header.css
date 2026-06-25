@@ -21,6 +21,10 @@
 .header-link {
     text-decoration: none;
     color: var(--text-secondary);
+
+    font-size: 20px;
+    font-weight: 600;
+
     transition: color 0.2s ease;
 }
 

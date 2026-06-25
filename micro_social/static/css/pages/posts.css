@@ -31,7 +31,7 @@
     text-decoration: none;
 }
 
-.posts-column {
+.post-list {
     max-width: 800px;
     width: 100%;
 
@@ -42,7 +42,7 @@
     gap: 20px;
 }
 
-.posts-card {
+.post-card {
     padding: 36px;
 
     transition:
@@ -50,16 +50,16 @@
         border-color 0.2s ease;
 }
 
-.posts-card:hover {
+.post-card:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 149, 0, 0.3);
 }
 
-.posts-content {
+.post-card__content {
     padding: 0;
 }
 
-.posts-meta {
+.post-card__meta {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -72,22 +72,22 @@
     font-size: 14px;
 }
 
-.posts-author {
+.post-author {
     font-weight: 600;
     color: var(--text);
 }
 
-.posts-separator,
+.post-separator,
 .post-separator {
     color: var(--text-secondary);
     opacity: 0.6;
 }
 
-.posts-date {
+.post-date {
     color: var(--text-secondary);
 }
 
-.posts-title {
+.post-card__title {
     margin-bottom: 16px;
 
     color: var(--text);
@@ -103,7 +103,7 @@
     margin-bottom: 22px;
 }
 
-.posts-excerpt {
+.post-card__excerpt {
     margin-bottom: 24px;
 
     color: var(--text-secondary);
